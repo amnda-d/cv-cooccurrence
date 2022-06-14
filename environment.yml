@@ -1,0 +1,6 @@
+name: consHarmony
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+prefix: /Users/hyperion/miniconda3/envs/consHarmony

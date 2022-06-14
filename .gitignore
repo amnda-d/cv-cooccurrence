@@ -1,0 +1,10 @@
+.DS_Store
+*.rds
+.RData
+.Rhistory
+__pycache__
+src/feats/panphon.csv
+data/northeuralex/*
+data/lex_data/*
+data/r_data/*
+Rplots.pdf
