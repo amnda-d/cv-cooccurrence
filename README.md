@@ -1,7 +1,4 @@
-# Identity, Similarity and the OCP: A model of co-occurrence in 107 languages
-### Amanda Doucette, Morgan Sonderegger, Timothy J. O'Donnell, and Heather Goad
-
-Presented at LabPhon18, June 25, 2022.
+# A universal tendency towards vowel harmony and consonant anti-harmony
 
 
 ### Requirements
