@@ -12,8 +12,15 @@
   - cowplot 1.1.1
 
 ```
-make run
-Rscript r/models/script.R {datafilename.csv}
+python -m src {rawDataFile.csv} {features.csv} {languageName}
+Rscript r/models/script.R {languageName.csv}
+```
+
+for example:
+
+```
+python -m src data/SalamaArb.csv src/feats/feature.csv arabic
+Rscript r/models/script.R arabic.csv
 ```
 
 
