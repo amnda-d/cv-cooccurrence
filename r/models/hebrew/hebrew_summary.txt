@@ -1,0 +1,28 @@
+Bayes Factor (Savage-Dickey density ratio)
+
+Parameter   |       BF
+----------------------
+(Intercept) | 9.87e+41
+sim_new     |     1.00
+ident_new   |    0.192
+
+* Evidence Against The Null: 0 Family: negbinomial
+  Links: mu = log; shape = identity
+Formula: pair_count_v ~ offset(s1_freq + s2_freq) + sim_new + ident_new
+   Data: data (Number of observations: 36)
+  Draws: 4 chains, each with iter = 30000; warmup = 5000; thin = 1;
+         total post-warmup draws = 1e+05
+
+Population-Level Effects:
+          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept    11.48      0.38    10.75    12.25 1.00    54187    55746
+sim_new      -1.34      0.75    -2.80     0.15 1.00    55795    60978
+ident_new    -0.44      0.52    -1.45     0.62 1.00    54347    58435
+
+Family Specific Parameters:
+      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+shape     1.43      0.35     0.85     2.20 1.00    64569    63787
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
