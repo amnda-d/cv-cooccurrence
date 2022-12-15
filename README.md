@@ -11,8 +11,13 @@
   - tidyverse 1.3.1
   - cowplot 1.1.1
 
+```
+make run
+Rscript r/models/script.R {datafilename.csv}
+```
 
-#### To download the data
+
+<!-- #### To download the data
 
 ```
 make download_panphon
@@ -48,4 +53,4 @@ make figures
 
 ```
 make hypothesis
-```
+``` -->
