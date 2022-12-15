@@ -23,17 +23,17 @@ def filter_geminates_long_vowels(ipa_word):
     return out[1:]
 
 class Lexicon():
-    def __init__(self, lexicon_file, language):
+    def __init__(self, lexicon_file):
         self.data = {}
         with open(lexicon_file, encoding="utf-8") as lex_f:
             lex_f.readline()
             for line in lex_f:
-                line = line.strip('\n')
-                # language = line[0].lower()
-                source = 'lex'
-                # ipa = line.split()
-                # ipa = filter_geminates_long_vowels(ipa)
-                ipa = [x.lower() for x in line if x != '']
+                line = line.strip('\n').split('\t')
+                language = line[0].lower()
+                source = line[1].lower()
+                ipa = line[2].split(' ')
+                ipa = filter_geminates_long_vowels(ipa)
+                ipa = [x for x in ipa if x != '']
                 if language not in self.data:
                     self.data[language] = {}
                 if source not in self.data[language]:

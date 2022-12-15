@@ -11,20 +11,8 @@
   - tidyverse 1.3.1
   - cowplot 1.1.1
 
-```
-python -m src {rawDataFile.csv} {features.csv} {languageName}
-Rscript r/models/script.R {languageName.csv}
-```
 
-for example:
-
-```
-python -m src data/SalamaArb.csv src/feats/feature.csv arabic
-Rscript r/models/script.R arabic.csv
-```
-
-
-<!-- #### To download the data
+#### To download the data
 
 ```
 make download_panphon
@@ -60,4 +48,4 @@ make figures
 
 ```
 make hypothesis
-``` -->
+```

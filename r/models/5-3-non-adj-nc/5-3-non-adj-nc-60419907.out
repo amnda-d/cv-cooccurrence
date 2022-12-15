@@ -1,0 +1,344 @@
+
+Lmod is automatically replacing "intel/2020.1.217" with "gcc/9.3.0".
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) openmpi/4.0.3
+
+Loading required package: Rcpp
+Loading 'brms' package (version 2.16.3). Useful instructions
+can be found by typing help('brms'). A more detailed introduction
+to the package is available through vignette('brms_overview').
+
+Attaching package: ‘brms’
+
+The following object is masked from ‘package:stats’:
+
+    ar
+
+     type             language        family           subfamily        
+ cons  :95875   adyghe    : 4765   Length:106060      Length:106060     
+ vowels:10185   skolt sami: 2522   Class :character   Class :character  
+                abkhaz    : 2146   Mode  :character   Mode  :character  
+                hindi     : 1805                                        
+                lezgian   : 1730                                        
+                tsez      : 1730                                        
+                (Other)   :91362                                        
+  avg_c_count     avg_v_count       latitude        longitude      
+ Min.   :2.532   Min.   :1.657   Min.   : 9.592   Min.   :-174.29  
+ 1st Qu.:2.989   1st Qu.:2.125   1st Qu.:42.250   1st Qu.:  23.80  
+ Median :3.265   Median :2.326   Median :50.250   Median :  44.23  
+ Mean   :3.299   Mean   :2.406   Mean   :49.824   Mean   :  47.51  
+ 3rd Qu.:3.524   3rd Qu.:2.637   3rd Qu.:59.801   3rd Qu.:  74.82  
+ Max.   :4.926   Max.   :3.516   Max.   :73.135   Max.   : 170.04  
+                                                                   
+    source            v_inv_size       c_inv_size          s1       
+ Length:106060      Min.   : 2.000   Min.   :16.00   m      : 3076  
+ Class :character   1st Qu.: 7.000   1st Qu.:26.00   n      : 3076  
+ Mode  :character   Median : 8.000   Median :31.00   t      : 3050  
+                    Mean   : 9.015   Mean   :32.73   s      : 3048  
+                    3rd Qu.:11.000   3rd Qu.:36.00   k      : 3005  
+                    Max.   :22.000   Max.   :69.00   d      : 2948  
+                                                     (Other):87857  
+       s2          pair_count         s1_count         s2_count     
+ m      : 3076   Min.   :  0.000   Min.   :   1.0   Min.   :   1.0  
+ n      : 3076   1st Qu.:  0.000   1st Qu.:  23.0   1st Qu.:  23.0  
+ t      : 3050   Median :  0.000   Median :  84.0   Median :  84.0  
+ s      : 3048   Mean   :  4.277   Mean   : 134.9   Mean   : 134.9  
+ k      : 3005   3rd Qu.:  3.000   3rd Qu.: 190.0   3rd Qu.: 190.0  
+ d      : 2948   Max.   :940.000   Max.   :2522.0   Max.   :2522.0  
+ (Other):87857                                                      
+   pair_freq          s1_freq           s2_freq           identity      
+ Min.   :   -Inf   Min.   :-9.0803   Min.   :-9.0803   Min.   :0.00000  
+ 1st Qu.:   -Inf   1st Qu.:-5.6133   1st Qu.:-5.6133   1st Qu.:0.00000  
+ Median :   -Inf   Median :-4.2991   Median :-4.2991   Median :0.00000  
+ Mean   :   -Inf   Mean   :-4.7449   Mean   :-4.7449   Mean   :0.03847  
+ 3rd Qu.:-6.7542   3rd Qu.:-3.5359   3rd Qu.:-3.5359   3rd Qu.:0.00000  
+ Max.   :-0.6408   Max.   :-0.9891   Max.   :-0.9891   Max.   :1.00000  
+                                                                        
+ nat_class_sim          sim              syl              son        
+ Min.   :0.00625   Min.   :0.0000   Min.   :0.0000   Min.   :0.0000  
+ 1st Qu.:0.12821   1st Qu.:0.5625   1st Qu.:1.0000   1st Qu.:0.0000  
+ Median :0.20000   Median :0.6667   Median :1.0000   Median :1.0000  
+ Mean   :0.25758   Mean   :0.6637   Mean   :0.9898   Mean   :0.6135  
+ 3rd Qu.:0.31186   3rd Qu.:0.7647   3rd Qu.:1.0000   3rd Qu.:1.0000  
+ Max.   :1.00000   Max.   :1.0000   Max.   :1.0000   Max.   :1.0000  
+                                                                     
+      cons             cont            delrel            lat        
+ Min.   :0.0000   Min.   :0.0000   Min.   :0.0000   Min.   :0.0000  
+ 1st Qu.:1.0000   1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:1.0000  
+ Median :1.0000   Median :1.0000   Median :1.0000   Median :1.0000  
+ Mean   :0.8846   Mean   :0.5567   Mean   :0.7304   Mean   :0.8921  
+ 3rd Qu.:1.0000   3rd Qu.:1.0000   3rd Qu.:1.0000   3rd Qu.:1.0000  
+ Max.   :1.0000   Max.   :1.0000   Max.   :1.0000   Max.   :1.0000  
+                                                                    
+      nas             strid             voi               sg        
+ Min.   :0.0000   Min.   :0.0000   Min.   :0.0000   Min.   :0.0000  
+ 1st Qu.:1.0000   1st Qu.:1.0000   1st Qu.:0.0000   1st Qu.:1.0000  
+ Median :1.0000   Median :1.0000   Median :1.0000   Median :1.0000  
+ Mean   :0.7874   Mean   :0.9069   Mean   :0.5685   Mean   :0.9569  
+ 3rd Qu.:1.0000   3rd Qu.:1.0000   3rd Qu.:1.0000   3rd Qu.:1.0000  
+ Max.   :1.0000   Max.   :1.0000   Max.   :1.0000   Max.   :1.0000  
+                                                                    
+       cg              ant              cor             distr       
+ Min.   :0.0000   Min.   :0.0000   Min.   :0.0000   Min.   :0.0000  
+ 1st Qu.:1.0000   1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:0.0000  
+ Median :1.0000   Median :1.0000   Median :1.0000   Median :0.0000  
+ Mean   :0.9424   Mean   :0.5601   Mean   :0.5594   Mean   :0.4776  
+ 3rd Qu.:1.0000   3rd Qu.:1.0000   3rd Qu.:1.0000   3rd Qu.:1.0000  
+ Max.   :1.0000   Max.   :1.0000   Max.   :1.0000   Max.   :1.0000  
+                                                                    
+      lab               hi               lo              back       
+ Min.   :0.0000   Min.   :0.0000   Min.   :0.0000   Min.   :0.0000  
+ 1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:1.0000   1st Qu.:0.0000  
+ Median :1.0000   Median :1.0000   Median :1.0000   Median :1.0000  
+ Mean   :0.6764   Mean   :0.5075   Mean   :0.8538   Mean   :0.5972  
+ 3rd Qu.:1.0000   3rd Qu.:1.0000   3rd Qu.:1.0000   3rd Qu.:1.0000  
+ Max.   :1.0000   Max.   :1.0000   Max.   :1.0000   Max.   :1.0000  
+                                                                    
+     round           velaric           tense             long       hitone 
+ Min.   :0.0000   Min.   :0.0000   Min.   :0.0000   Min.   :1   Min.   :1  
+ 1st Qu.:1.0000   1st Qu.:1.0000   1st Qu.:1.0000   1st Qu.:1   1st Qu.:1  
+ Median :1.0000   Median :1.0000   Median :1.0000   Median :1   Median :1  
+ Mean   :0.8746   Mean   :0.9994   Mean   :0.9508   Mean   :1   Mean   :1  
+ 3rd Qu.:1.0000   3rd Qu.:1.0000   3rd Qu.:1.0000   3rd Qu.:1   3rd Qu.:1  
+ Max.   :1.0000   Max.   :1.0000   Max.   :1.0000   Max.   :1   Max.   :1  
+                                                                           
+     hireg    pair_count_v         isCons          isVow        
+ Min.   :1   Min.   :  0.000   Min.   :0.000   Min.   :0.00000  
+ 1st Qu.:1   1st Qu.:  0.000   1st Qu.:1.000   1st Qu.:0.00000  
+ Median :1   Median :  0.000   Median :1.000   Median :0.00000  
+ Mean   :1   Mean   :  4.277   Mean   :0.904   Mean   :0.09603  
+ 3rd Qu.:1   3rd Qu.:  3.000   3rd Qu.:1.000   3rd Qu.:0.00000  
+ Max.   :1   Max.   :940.000   Max.   :1.000   Max.   :1.00000  
+                                                                
+   log_v_inv        log_c_inv       ident_new          sim_new      
+ Min.   :0.6931   Min.   :2.773   Min.   :0.00000   Min.   :0.0000  
+ 1st Qu.:1.9459   1st Qu.:3.258   1st Qu.:0.00000   1st Qu.:0.5333  
+ Median :2.0794   Median :3.434   Median :0.00000   Median :0.6471  
+ Mean   :2.1043   Mean   :3.449   Mean   :0.03847   Mean   :0.6252  
+ 3rd Qu.:2.3979   3rd Qu.:3.584   3rd Qu.:0.00000   3rd Qu.:0.7500  
+ Max.   :3.0910   Max.   :4.234   Max.   :1.00000   Max.   :1.0000  
+                                                                    
+Setting 'rescor' to FALSE by default for this model
+Compiling Stan program...
+Start sampling
+
+SAMPLING FOR MODEL 'ea775845290233f3517d4e57f10f2f08' NOW (CHAIN 4).
+
+SAMPLING FOR MODEL 'ea775845290233f3517d4e57f10f2f08' NOW (CHAIN 1).
+
+SAMPLING FOR MODEL 'ea775845290233f3517d4e57f10f2f08' NOW (CHAIN 2).
+
+SAMPLING FOR MODEL 'ea775845290233f3517d4e57f10f2f08' NOW (CHAIN 3).
+Chain 4: 
+Chain 4: Gradient evaluation took 0.081257 seconds
+Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 812.57 seconds.
+Chain 4: Adjust your expectations accordingly!
+Chain 4: 
+Chain 4: 
+Chain 1: 
+Chain 1: Gradient evaluation took 0.090955 seconds
+Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 909.55 seconds.
+Chain 1: Adjust your expectations accordingly!
+Chain 1: 
+Chain 1: 
+Chain 3: 
+Chain 3: Gradient evaluation took 0.093001 seconds
+Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 930.01 seconds.
+Chain 3: Adjust your expectations accordingly!
+Chain 3: 
+Chain 3: 
+Chain 2: 
+Chain 2: Gradient evaluation took 0.096909 seconds
+Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 969.09 seconds.
+Chain 2: Adjust your expectations accordingly!
+Chain 2: 
+Chain 2: 
+Chain 3: Iteration:    1 / 8000 [  0%]  (Warmup)
+Chain 2: Iteration:    1 / 8000 [  0%]  (Warmup)
+Chain 1: Iteration:    1 / 8000 [  0%]  (Warmup)
+Chain 4: Iteration:    1 / 8000 [  0%]  (Warmup)
+Chain 4: Iteration:  800 / 8000 [ 10%]  (Warmup)
+Chain 3: Iteration:  800 / 8000 [ 10%]  (Warmup)
+Chain 1: Iteration:  800 / 8000 [ 10%]  (Warmup)
+Chain 2: Iteration:  800 / 8000 [ 10%]  (Warmup)
+Chain 4: Iteration: 1600 / 8000 [ 20%]  (Warmup)
+Chain 3: Iteration: 1600 / 8000 [ 20%]  (Warmup)
+Chain 2: Iteration: 1600 / 8000 [ 20%]  (Warmup)
+Chain 1: Iteration: 1600 / 8000 [ 20%]  (Warmup)
+Chain 4: Iteration: 2001 / 8000 [ 25%]  (Sampling)
+Chain 3: Iteration: 2001 / 8000 [ 25%]  (Sampling)
+Chain 1: Iteration: 2001 / 8000 [ 25%]  (Sampling)
+Chain 2: Iteration: 2001 / 8000 [ 25%]  (Sampling)
+Chain 2: Iteration: 2800 / 8000 [ 35%]  (Sampling)
+Chain 1: Iteration: 2800 / 8000 [ 35%]  (Sampling)
+Chain 3: Iteration: 2800 / 8000 [ 35%]  (Sampling)
+Chain 4: Iteration: 2800 / 8000 [ 35%]  (Sampling)
+Chain 2: Iteration: 3600 / 8000 [ 45%]  (Sampling)
+Chain 1: Iteration: 3600 / 8000 [ 45%]  (Sampling)
+Chain 3: Iteration: 3600 / 8000 [ 45%]  (Sampling)
+Chain 4: Iteration: 3600 / 8000 [ 45%]  (Sampling)
+Chain 2: Iteration: 4400 / 8000 [ 55%]  (Sampling)
+Chain 1: Iteration: 4400 / 8000 [ 55%]  (Sampling)
+Chain 3: Iteration: 4400 / 8000 [ 55%]  (Sampling)
+Chain 4: Iteration: 4400 / 8000 [ 55%]  (Sampling)
+Chain 2: Iteration: 5200 / 8000 [ 65%]  (Sampling)
+Chain 1: Iteration: 5200 / 8000 [ 65%]  (Sampling)
+Chain 3: Iteration: 5200 / 8000 [ 65%]  (Sampling)
+Chain 4: Iteration: 5200 / 8000 [ 65%]  (Sampling)
+Chain 2: Iteration: 6000 / 8000 [ 75%]  (Sampling)
+Chain 1: Iteration: 6000 / 8000 [ 75%]  (Sampling)
+Chain 3: Iteration: 6000 / 8000 [ 75%]  (Sampling)
+Chain 4: Iteration: 6000 / 8000 [ 75%]  (Sampling)
+Chain 2: Iteration: 6800 / 8000 [ 85%]  (Sampling)
+Chain 1: Iteration: 6800 / 8000 [ 85%]  (Sampling)
+Chain 3: Iteration: 6800 / 8000 [ 85%]  (Sampling)
+Chain 4: Iteration: 6800 / 8000 [ 85%]  (Sampling)
+Chain 2: Iteration: 7600 / 8000 [ 95%]  (Sampling)
+Chain 1: Iteration: 7600 / 8000 [ 95%]  (Sampling)
+Chain 3: Iteration: 7600 / 8000 [ 95%]  (Sampling)
+Chain 4: Iteration: 7600 / 8000 [ 95%]  (Sampling)
+Chain 2: Iteration: 8000 / 8000 [100%]  (Sampling)
+Chain 2: 
+Chain 2:  Elapsed Time: 11127.4 seconds (Warm-up)
+Chain 2:                19955.2 seconds (Sampling)
+Chain 2:                31082.6 seconds (Total)
+Chain 2: 
+Chain 1: Iteration: 8000 / 8000 [100%]  (Sampling)
+Chain 1: 
+Chain 1:  Elapsed Time: 11118.7 seconds (Warm-up)
+Chain 1:                20004.4 seconds (Sampling)
+Chain 1:                31123.1 seconds (Total)
+Chain 1: 
+Chain 3: Iteration: 8000 / 8000 [100%]  (Sampling)
+Chain 3: 
+Chain 3:  Elapsed Time: 11111.8 seconds (Warm-up)
+Chain 3:                20363.8 seconds (Sampling)
+Chain 3:                31475.5 seconds (Total)
+Chain 3: 
+Chain 4: Iteration: 8000 / 8000 [100%]  (Sampling)
+Chain 4: 
+Chain 4:  Elapsed Time: 10870.4 seconds (Warm-up)
+Chain 4:                21178.2 seconds (Sampling)
+Chain 4:                32048.7 seconds (Total)
+Chain 4: 
+Sampling priors, please wait...
+Bayes Factor (Savage-Dickey density ratio) paircount
+
+Parameter   |  Response |       BF
+----------------------------------
+(Intercept) | paircount | 3.99e+31
+(Intercept) | paircount | 3.99e+31
+log_c_inv   | paircount |    0.026
+log_c_inv   | paircount |    0.026
+log_v_inv   | paircount |    0.160
+log_v_inv   | paircount |    0.160
+sim_new     | paircount | 1.45e+16
+sim_new     | paircount | 1.45e+16
+ident_new   | paircount | 1.14e+37
+ident_new   | paircount | 1.14e+37
+
+# Fixed effects paircountv
+
+Parameter   |   Response |       BF
+-----------------------------------
+(Intercept) | paircountv | 1.18e+20
+(Intercept) | paircountv | 1.18e+20
+log_c_inv   | paircountv |    0.033
+log_c_inv   | paircountv |    0.033
+log_v_inv   | paircountv |    47.75
+log_v_inv   | paircountv |    47.75
+sim_new     | paircountv |     3.24
+sim_new     | paircountv |     3.24
+ident_new   | paircountv |    26.32
+ident_new   | paircountv |    26.32
+
+* Evidence Against The Null: 0 Family: MV(negbinomial, negbinomial) 
+  Links: mu = log; shape = identity
+         mu = log; shape = identity 
+Formula: pair_count | subset(isCons) ~ offset(s1_freq + s2_freq) + log_c_inv + log_v_inv + sim_new + ident_new + (ident_new + sim_new | q | language) 
+         pair_count_v | subset(isVow) ~ offset(s1_freq + s2_freq) + log_c_inv + log_v_inv + sim_new + ident_new + (ident_new + sim_new | q | language) 
+   Data: data (Number of observations: 106060) 
+  Draws: 4 chains, each with iter = 8000; warmup = 2000; thin = 1;
+         total post-warmup draws = 24000
+
+Group-Level Effects: 
+~language (Number of levels: 107) 
+                                               Estimate Est.Error l-95% CI
+sd(paircount_Intercept)                            0.28      0.03     0.22
+sd(paircount_ident_new)                            0.43      0.05     0.33
+sd(paircount_sim_new)                              0.43      0.05     0.34
+sd(paircountv_Intercept)                           0.24      0.04     0.16
+sd(paircountv_ident_new)                           0.46      0.07     0.32
+sd(paircountv_sim_new)                             0.22      0.10     0.02
+cor(paircount_Intercept,paircount_ident_new)      -0.29      0.14    -0.55
+cor(paircount_Intercept,paircount_sim_new)        -0.65      0.08    -0.79
+cor(paircount_ident_new,paircount_sim_new)         0.31      0.14     0.02
+cor(paircount_Intercept,paircountv_Intercept)      0.52      0.15     0.20
+cor(paircount_ident_new,paircountv_Intercept)      0.02      0.19    -0.34
+cor(paircount_sim_new,paircountv_Intercept)        0.19      0.18    -0.19
+cor(paircount_Intercept,paircountv_ident_new)      0.20      0.17    -0.15
+cor(paircount_ident_new,paircountv_ident_new)      0.29      0.17    -0.06
+cor(paircount_sim_new,paircountv_ident_new)       -0.05      0.17    -0.38
+cor(paircountv_Intercept,paircountv_ident_new)     0.02      0.22    -0.37
+cor(paircount_Intercept,paircountv_sim_new)       -0.02      0.28    -0.57
+cor(paircount_ident_new,paircountv_sim_new)       -0.07      0.28    -0.61
+cor(paircount_sim_new,paircountv_sim_new)          0.22      0.27    -0.38
+cor(paircountv_Intercept,paircountv_sim_new)      -0.04      0.31    -0.57
+cor(paircountv_ident_new,paircountv_sim_new)      -0.20      0.29    -0.72
+                                               u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(paircount_Intercept)                            0.34 1.00     8237    13194
+sd(paircount_ident_new)                            0.54 1.00     6203    10808
+sd(paircount_sim_new)                              0.53 1.00     2496     4581
+sd(paircountv_Intercept)                           0.32 1.00     6785    12115
+sd(paircountv_ident_new)                           0.61 1.00     2238     5224
+sd(paircountv_sim_new)                             0.41 1.01      781     1834
+cor(paircount_Intercept,paircount_ident_new)       0.00 1.00     4996    10003
+cor(paircount_Intercept,paircount_sim_new)        -0.46 1.00     3148     5678
+cor(paircount_ident_new,paircount_sim_new)         0.55 1.00     2390     4536
+cor(paircount_Intercept,paircountv_Intercept)      0.78 1.00     4649     9566
+cor(paircount_ident_new,paircountv_Intercept)      0.39 1.00     6481    13290
+cor(paircount_sim_new,paircountv_Intercept)        0.52 1.00     8274    13605
+cor(paircount_Intercept,paircountv_ident_new)      0.52 1.00     7793    12502
+cor(paircount_ident_new,paircountv_ident_new)      0.61 1.00     7730    13759
+cor(paircount_sim_new,paircountv_ident_new)        0.30 1.00     8097    13283
+cor(paircountv_Intercept,paircountv_ident_new)     0.49 1.00     1475     3860
+cor(paircount_Intercept,paircountv_sim_new)        0.55 1.00    13174    13007
+cor(paircount_ident_new,paircountv_sim_new)        0.50 1.00    13270    12268
+cor(paircount_sim_new,paircountv_sim_new)          0.70 1.00    11581     9981
+cor(paircountv_Intercept,paircountv_sim_new)       0.59 1.00     3736     9311
+cor(paircountv_ident_new,paircountv_sim_new)       0.38 1.00     5316     9623
+
+Population-Level Effects: 
+                     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS
+paircount_Intercept      9.99      0.37     9.26    10.70 1.00     4819
+paircountv_Intercept     9.45      0.49     8.48    10.41 1.00     5941
+paircount_log_c_inv     -0.04      0.09    -0.22     0.15 1.00     4756
+paircount_log_v_inv     -0.14      0.06    -0.26    -0.01 1.00     4070
+paircount_sim_new       -0.92      0.05    -1.03    -0.82 1.00     6624
+paircount_ident_new     -1.70      0.06    -1.82    -1.59 1.00    10552
+paircountv_log_c_inv     0.04      0.13    -0.20     0.29 1.00     6103
+paircountv_log_v_inv    -0.35      0.08    -0.51    -0.18 1.00     5061
+paircountv_sim_new       0.26      0.08     0.10     0.41 1.00    14711
+paircountv_ident_new     0.30      0.08     0.15     0.45 1.00    14143
+                     Tail_ESS
+paircount_Intercept      8591
+paircountv_Intercept    11160
+paircount_log_c_inv      7975
+paircount_log_v_inv      7876
+paircount_sim_new       12215
+paircount_ident_new     14959
+paircountv_log_c_inv    11712
+paircountv_log_v_inv     9544
+paircountv_sim_new      15823
+paircountv_ident_new    17425
+
+Family Specific Parameters: 
+                 Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+shape_paircount      1.12      0.01     1.10     1.14 1.00    38062    17357
+shape_paircountv     0.85      0.02     0.81     0.88 1.00    37979    18282
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
