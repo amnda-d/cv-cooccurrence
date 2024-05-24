@@ -1,4 +1,4 @@
-.PHONY: clean build lint test help
+.PHONY: clean build lint test help figures
 
 clean:
 	@find . -name '*.pyc' -exec rm -f {} +
@@ -7,11 +7,11 @@ clean:
 	@find . -name '__pycache__' -exec rm -rf {} +
 
 lint:
-	pylint src
-	pylint tests --disable=import-error
+	pylint --rcfile="pylintrc" src
+	pylint --rcfile="pylintrc" tests --disable=import-error
 
 test:
-	nose2 -c nose2.cfg -v --layer-reporter
+	nose2 -c tests/nose2.cfg -v --layer-reporter
 	@make clean
 
 testall: lint test
@@ -32,25 +32,14 @@ download_northeuralex:
 	curl http://www.sfs.uni-tuebingen.de/\~jdellert/northeuralex/0.9/northeuralex-0.9-language-data.tsv > data/northeuralex/northeuralex-0.9-language-data.tsv
 
 run_nc_model:
-	Rscript r/models/5-3-non-adj-nc/script.R
+	Rscript models/final_model/script.R nat_class_sim final_model
 
 run_feat_model:
-	Rscript r/models/5-3-non-adj-feat/script.R
-
-run_fam_nc_model:
-	Rscript r/models/5-4-non-adj-nc-family/script.R
-
-run_fam_feat_model:
-	Rscript r/models/5-4-non-adj-feat-family/script.R
+	Rscript models/final_model/script.R sim final_model
 
 figures:
-	for filename in r/figures/*.R; do \
-		echo $${filename} ; \
-    Rscript $${filename} >& /dev/null ; \
-	done
-
-hypothesis:
-	Rscript r/hypothesis_tests.R
+	mkdir -p figures
+	Rscript figures.R
 
 help:
 	@echo "  clean"
@@ -73,7 +62,3 @@ help:
 	@echo "    Run the Natural Class Similarity (NC) model"
 	@echo "  run_feat_model"
 	@echo "    Run the Feature Similarity (Feat) model"
-	@echo "  run_fam_nc_model"
-	@echo "    Run the Family Natural Class Similarity (Fam-NC) model"
-	@echo "  run_fam_feat_model"
-	@echo "    Run the Family Feature Similarity (Fam-Feat) model"

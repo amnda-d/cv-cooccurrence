@@ -7,6 +7,8 @@ disable=
   too-many-locals,
   too-many-arguments,
   invalid-name,
-  too-many-statements
+  too-many-statements,
+  too-many-instance-attributes,
+  line-too-long
 
 output-format=colorized

@@ -38,7 +38,7 @@ with such.A("Data writer") as it:
         it.assertIn(expected, output)
 
     @it.should("produce the correct output for non-adjacent pairs")
-    def test_output_na():
+    def test_output2():
         output = get_csv_data('tests/testwritedata.csv', 'tests/testfeats.csv', non_adj=True)
         expected = {
                 'type': 'cons',

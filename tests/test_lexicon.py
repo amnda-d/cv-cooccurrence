@@ -46,14 +46,8 @@ with such.A("Lexicon") as it:
 
     @it.should("get the consonant inventory of a language")
     def test_c_inv():
-        it.assertEqual(
-            it.lex.get_cons_inventory('finnish', 'northeuralex'),
-            {'s', 'l', 'm', 'k', 'r', 'ʋ', 'h'}
-        )
-        it.assertEqual(
-            it.lex.get_cons_inventory('evenki', 'northeuralex'),
-            {'x', 'w', 'l', 'm', 'd͡ʒ'}
-        )
+        it.assertEqual(it.lex.get_cons_inventory('finnish', 'northeuralex'), {'s', 'l', 'm', 'k', 'r', 'ʋ', 'h'})
+        it.assertEqual(it.lex.get_cons_inventory('evenki', 'northeuralex'), {'x', 'w', 'l', 'm', 'd͡ʒ'})
 
     @it.should("throw an error if a language or source doesn't exist")
     def test_c_err():
@@ -64,22 +58,17 @@ with such.A("Lexicon") as it:
 
     @it.should("count the number of occurrences of a segment")
     def test_count_seg():
-        it.assertEqual(it.lex.get_seg_count('finnish', 'northeuralex', 'm', 0, non_adj=True), 1)
-        it.assertEqual(it.lex.get_seg_count('finnish', 'northeuralex', 'm', 1, non_adj=True), 1)
-        it.assertEqual(it.lex.get_seg_count('evenki', 'northeuralex', 'a', 0, non_adj=True), 3)
+        it.assertEqual(it.lex.get_seg_count('finnish', 'northeuralex', 'm', 0), 1)
+        it.assertEqual(it.lex.get_seg_count('evenki', 'northeuralex', 'a', 1), 2)
 
     @it.should("calculate the frequency of a segment")
     def test_seg_freq():
-        it.assertEqual(it.lex.get_seg_freq('finnish', 'northeuralex', 'i', 0, non_adj=True), 1/4)
-        it.assertEqual(it.lex.get_seg_freq('evenki', 'northeuralex', 'm', 1, non_adj=True), 1/3)
+        it.assertEqual(it.lex.get_seg_freq('finnish', 'northeuralex', 'i', 0), 1/4)
+        it.assertEqual(it.lex.get_seg_freq('evenki', 'northeuralex', 'm', 1), 2/4)
 
     @it.should("get all possible vowel pairs")
     def test_get_v_pairs():
-        it.assertEqual(
-            it.lex.get_vowel_pairs('evenki', 'northeuralex'),
-                {('i', 'a'), ('o', 'a'), ('o', 'i'), ('a', 'a'),
-                ('i', 'i'), ('o', 'o'), ('a', 'i'), ('a', 'o'), ('i', 'o')}
-            )
+        it.assertEqual(it.lex.get_vowel_pairs('evenki', 'northeuralex'), {('i', 'a'), ('o', 'a'), ('o', 'i'), ('a', 'a'), ('i', 'i'), ('o', 'o'), ('a', 'i'), ('a', 'o'), ('i', 'o')})
 
     @it.should("get all possible consonant pairs")
     def test_get_c_pairs():
@@ -97,29 +86,17 @@ with such.A("Lexicon") as it:
 
     @it.should("get pair counts for non-adjacent vowel pairs")
     def test_non_adj_v_count():
-        it.assertEqual(
-            it.lex.get_all_vowel_paircount('test', 'northeuralex', 'a', 'i', non_adj=True), 0
-        )
-        it.assertEqual(
-            it.lex.get_all_vowel_paircount('test', 'northeuralex', 'i', 'a', non_adj=True), 1
-        )
-        it.assertEqual(
-            it.lex.get_all_vowel_paircount('test', 'northeuralex', 'a', 'a', non_adj=True), 1
-        )
+        it.assertEqual(it.lex.get_all_vowel_paircount('test', 'northeuralex', 'a', 'i', non_adj=True), 0)
+        it.assertEqual(it.lex.get_all_vowel_paircount('test', 'northeuralex', 'i', 'a', non_adj=True), 1)
+        it.assertEqual(it.lex.get_all_vowel_paircount('test', 'northeuralex', 'a', 'a', non_adj=True), 1)
 
     @it.should("get pair frequencies for all vowel pairs")
     def test_get_all_v_pairfreq():
-        it.assertEqual(
-            it.lex.get_all_vowel_pairfreq('evenki', 'northeuralex', 'a', 'i'),
-            np.log(2/4)
-        )
+        it.assertEqual(it.lex.get_all_vowel_pairfreq('evenki', 'northeuralex', 'a', 'i'), np.log(2/4))
 
     @it.should("get pair frequencies for non-adjacent vowel pairs")
     def test_get_non_adj_v_pairfreq():
-        it.assertEqual(
-            it.lex.get_all_vowel_pairfreq('test', 'northeuralex', 'a', 'a', non_adj=True),
-            np.log(1/2)
-        )
+        it.assertEqual(it.lex.get_all_vowel_pairfreq('test', 'northeuralex', 'a', 'a', non_adj=True), np.log(1/2))
 
     @it.should("get pair counts for all consonant pairs")
     def test_get_all_c_paircount():
@@ -127,36 +104,24 @@ with such.A("Lexicon") as it:
 
     @it.should("get pair counts for non-adjacent consonant pairs")
     def test_non_adj_c_count():
-        it.assertEqual(
-            it.lex.get_all_cons_paircount('test', 'northeuralex', 't', 'h', non_adj=True), 1
-        )
-        it.assertEqual(
-            it.lex.get_all_cons_paircount('test', 'northeuralex', 'l', 'n', non_adj=True), 1
-        )
-        it.assertEqual(
-            it.lex.get_all_cons_paircount('test', 'northeuralex', 'n', 'd', non_adj=True), 0
-        )
+        it.assertEqual(it.lex.get_all_cons_paircount('test', 'northeuralex', 't', 'h', non_adj=True), 1)
+        it.assertEqual(it.lex.get_all_cons_paircount('test', 'northeuralex', 'l', 'n', non_adj=True), 1)
+        it.assertEqual(it.lex.get_all_cons_paircount('test', 'northeuralex', 'n', 'd', non_adj=True), 0)
 
     @it.should("get pair frequencies for all consonant pairs")
     def test_get_all_c_pairfreq():
-        it.assertEqual(
-            it.lex.get_all_cons_pairfreq('evenki', 'northeuralex', 'l', 'm'),
-            np.log(1/4)
-        )
+        it.assertEqual(it.lex.get_all_cons_pairfreq('evenki', 'northeuralex', 'l', 'm'), np.log(1/4))
 
     @it.should("get pair frequencies for non adjacent consonant pairs")
-    def test_get_all_c_pairfreq_2():
-        it.assertEqual(
-            it.lex.get_all_cons_pairfreq('test', 'northeuralex', 't', 'h', non_adj=True),
-            np.log(1/3)
-        )
+    def test_get_all_c_pairfreq2():
+        it.assertEqual(it.lex.get_all_cons_pairfreq('test', 'northeuralex', 't', 'h', non_adj=True), np.log(1/3))
 
     @it.should("get the average number of vowels per word in a language")
     def test_num_v():
         it.assertEqual(it.lex.get_avg_vowel_count('evenki', 'northeuralex'), 3)
 
     @it.should("get the average number of consonants per word in a language")
-    def test_num_c():
+    def test_num_v2():
         it.assertEqual(it.lex.get_avg_cons_count('evenki', 'northeuralex'), 3)
 
 it.createTests(globals())
