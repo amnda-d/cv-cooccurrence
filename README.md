@@ -1,4 +1,4 @@
-# A universal tendency towards vowel harmony and consonant anti-harmony
+# Investigating the universality of consonant and vowel co-occurrence restrictions
 
 
 ### Requirements
