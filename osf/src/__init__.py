@@ -59,14 +59,14 @@ def get_csv_data(data, features, non_adj=False):
                 's1': s1,
                 's2': s2,
                 'pair_count': lex.get_all_cons_paircount(lang, DATA_SOURCE, s1, s2, non_adj),
-                's1_count': lex.get_seg_count(lang, DATA_SOURCE, s1, 0, non_adj),
-                's2_count': lex.get_seg_count(lang, DATA_SOURCE, s2, 1, non_adj),
+                's1_count': lex.get_seg_count(lang, DATA_SOURCE, s1),
+                's2_count': lex.get_seg_count(lang, DATA_SOURCE, s2),
                 'pair_freq': lex.get_all_cons_pairfreq(lang, DATA_SOURCE, s1, s2, non_adj),
-                's1_freq': lex.get_seg_freq(lang, DATA_SOURCE, s1, 0, non_adj),
-                's2_freq': lex.get_seg_freq(lang, DATA_SOURCE, s2, 1, non_adj),
+                's1_freq': lex.get_seg_freq(lang, DATA_SOURCE, s1),
+                's2_freq': lex.get_seg_freq(lang, DATA_SOURCE, s2),
                 'identity': 1 if s1 == s2 else 0,
-                'nat_class_sim': nc_sim.similarity(v_inv.union(c_inv), s1, s2),
-                'sim': feat_sim.similarity(v_inv.union(c_inv), s1, s2),
+                'nat_class_sim': nc_sim.similarity(c_inv, s1, s2),
+                'sim': feat_sim.similarity(c_inv, s1, s2),
             } | {
                 ft: 1 if feats.get_feats(s1)[ft] == feats.get_feats(s2)[ft]
                 else 0 for ft in feats.feat_names
@@ -90,14 +90,14 @@ def get_csv_data(data, features, non_adj=False):
                 's1': s1,
                 's2': s2,
                 'pair_count': lex.get_all_vowel_paircount(lang, DATA_SOURCE, s1, s2, non_adj),
-                's1_count': lex.get_seg_count(lang, DATA_SOURCE, s1, 0, non_adj),
-                's2_count': lex.get_seg_count(lang, DATA_SOURCE, s2, 1, non_adj),
+                's1_count': lex.get_seg_count(lang, DATA_SOURCE, s1),
+                's2_count': lex.get_seg_count(lang, DATA_SOURCE, s2),
                 'pair_freq': lex.get_all_vowel_pairfreq(lang, DATA_SOURCE, s1, s2, non_adj),
-                's1_freq': lex.get_seg_freq(lang, DATA_SOURCE, s1, 0, non_adj),
-                's2_freq': lex.get_seg_freq(lang, DATA_SOURCE, s2, 1, non_adj),
+                's1_freq': lex.get_seg_freq(lang, DATA_SOURCE, s1),
+                's2_freq': lex.get_seg_freq(lang, DATA_SOURCE, s2),
                 'identity': 1 if s1 == s2 else 0,
-                'nat_class_sim': nc_sim.similarity(v_inv.union(c_inv), s1, s2),
-                'sim': feat_sim.similarity(v_inv.union(c_inv), s1, s2),
+                'nat_class_sim': nc_sim.similarity(v_inv, s1, s2),
+                'sim': feat_sim.similarity(v_inv, s1, s2),
             } | {
                 ft: 1 if feats.get_feats(s1)[ft] == feats.get_feats(s2)[ft]
                 else 0 for ft in feats.feat_names

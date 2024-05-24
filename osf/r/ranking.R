@@ -10,23 +10,10 @@ feat <- readRDS('r/models/5-4-non-adj-feat-family/model.rds')
 draws_nc <- nc %>% spread_draws(
   `r_family:language__paircount`[language, term],
   `r_family:language__paircountv`[language, term],
-  `r_family__paircount`[family, term],
-  `r_family__paircountv`[family, term],
   b_paircount_sim_new,
   b_paircountv_sim_new,
   b_paircount_ident_new,
-  b_paircountv_ident_new,
-  ndraws=100
-)
-
-draws_nc_fam <- nc %>% spread_draws(
-  `r_family__paircount`[family, term],
-  `r_family__paircountv`[family, term],
-  b_paircount_sim_new,
-  b_paircountv_sim_new,
-  b_paircount_ident_new,
-  b_paircountv_ident_new,
-  ndraws=100
+  b_paircountv_ident_new
 )
 
 draws_nc$`r_family_language__paircount` <- draws_nc$`r_family:language__paircount`
@@ -35,13 +22,10 @@ draws_nc$`r_family_language__paircountv` <- draws_nc$`r_family:language__paircou
 draws_feat <- feat %>% spread_draws(
   `r_family:language__paircount`[language, term],
   `r_family:language__paircountv`[language, term],
-  `r_family__paircount`[family, term],
-  `r_family__paircountv`[family, term],
   b_paircount_sim_new,
   b_paircountv_sim_new,
   b_paircount_ident_new,
-  b_paircountv_ident_new,
-  ndraws=100
+  b_paircountv_ident_new
 )
 
 draws_feat$`r_family_language__paircount` <- draws_feat$`r_family:language__paircount`
@@ -49,28 +33,27 @@ draws_feat$`r_family_language__paircountv` <- draws_feat$`r_family:language__pai
 
 nc_sim_intervals <- draws_nc %>% subset(term=='sim_new') %>% 
   median_qi(
-    sim_coef_c=r_family_language__paircount + r_family__paircount + b_paircount_sim_new,
-    sim_coef_v=r_family_language__paircountv + r_family__paircountv + b_paircountv_sim_new
-  ) %>% rowwise() %>% mutate(keep= grepl(family, language, fixed=TRUE)) %>% filter(keep==TRUE)
-
+    sim_coef_c=r_family_language__paircount + b_paircount_sim_new,
+    sim_coef_v=r_family_language__paircountv + b_paircountv_sim_new
+  )
 
 nc_ident_intervals <- draws_nc %>% subset(term=='ident_new') %>%
   median_qi(
-    ident_coef_c=r_family_language__paircount + r_family__paircount + b_paircount_ident_new,
-    ident_coef_v=r_family_language__paircountv + r_family__paircountv + b_paircountv_ident_new
-  )%>% rowwise() %>% mutate(keep= grepl(family, language, fixed=TRUE))%>% filter(keep==TRUE)
+    ident_coef_c=r_family_language__paircount + b_paircount_ident_new,
+    ident_coef_v=r_family_language__paircountv + b_paircountv_ident_new
+  )
 
 feat_sim_intervals <- draws_nc %>% subset(term=='sim_new') %>% 
   median_qi(
-    sim_coef_c=r_family_language__paircount + r_family__paircount + b_paircount_sim_new,
-    sim_coef_v=r_family_language__paircountv + r_family__paircountv + b_paircountv_sim_new
-  )%>% rowwise() %>% mutate(keep= grepl(family, language, fixed=TRUE))%>% filter(keep==TRUE)
+    sim_coef_c=r_family_language__paircount + b_paircount_sim_new,
+    sim_coef_v=r_family_language__paircountv + b_paircountv_sim_new
+  )
 
 feat_ident_intervals <- draws_nc %>% subset(term=='ident_new') %>%
   median_qi(
-    ident_coef_c=r_family_language__paircount + r_family__paircount + b_paircount_ident_new,
-    ident_coef_v=r_family_language__paircountv + r_family__paircountv + b_paircountv_ident_new
-  )%>% rowwise() %>% mutate(keep= grepl(family, language, fixed=TRUE))%>% filter(keep==TRUE)
+    ident_coef_c=r_family_language__paircount + b_paircount_ident_new,
+    ident_coef_v=r_family_language__paircountv + b_paircountv_ident_new
+  )
 
 nc_c <- data.frame(
   familyLanguage = nc_sim_intervals$language,

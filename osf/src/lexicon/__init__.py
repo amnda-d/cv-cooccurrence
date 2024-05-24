@@ -40,12 +40,7 @@ class Lexicon():
                     self.data[language][source] = [ipa]
                 else:
                     self.data[language][source] += [ipa]
-        self.seg_counters = {0: {}, 1: {}}
-        self.seg_counters_non_adj = {0: {}, 1: {}}
-        self.total_c_pairs_non_adj = 0
-        self.total_c_pairs = 0
-        self.total_v_pairs_non_adj = 0
-        self.total_v_pairs = 0
+        self.seg_counters = {}
         self.all_v_paircounts = {}
         self.non_adj_v_paircounts = {}
         self.all_c_paircounts = {}
@@ -67,65 +62,18 @@ class Lexicon():
         lex = self.data[language][source]
         return {c for word in lex for c in word if c not in VOWELS}
 
-    def get_seg_count(self, language, source, segment, position, non_adj=False):
+    def get_seg_count(self, language, source, segment):
         self.check_data(language, source)
-        if non_adj:
-            if (language, source) not in self.seg_counters_non_adj[position]:
-                words = self.data[language][source]
-                cpairs = []
-                vpairs = []
-                for word in words:
-                    vs = [(x, c) for (x, c) in enumerate(word) if c in VOWELS]
-                    for i in range(len(vs) - 1):
-                        if vs[i][0] + 1 != vs[i+1][0]:
-                            vpairs += [(vs[i][1], vs[i+1][1])]
-                    cs = [(x, c) for (x, c) in enumerate(word) if c not in VOWELS]
-                    for i in range(len(cs) - 1):
-                        if (cs[i][0] + 1) != cs[i+1][0]:
-                            cpairs += [(cs[i][1], cs[i+1][1])]
-                pos0 = [p[0] for p in cpairs] + [p[0] for p in vpairs]
-                pos1 = [p[1] for p in cpairs] + [p[1] for p in vpairs]
-                self.total_c_pairs_non_adj = len(cpairs)
-                self.total_v_pairs_non_adj = len(vpairs)
-                self.seg_counters_non_adj[0][(language, source)] = Counter(pos0)
-                self.seg_counters_non_adj[1][(language, source)] = Counter(pos1)
-            return self.seg_counters_non_adj[position][(language, source)][segment]
-        if (language, source) not in self.seg_counters[position]:
-            words = self.data[language][source]
-            cpairs = []
-            vpairs = []
-            for word in words:
-                vs = [c for c in word if c in VOWELS]
-                for i in range(len(vs) - 1):
-                    vpairs += [(vs[i], vs[i+1])]
-                cs = [c for c in word if c not in VOWELS]
-                for i in range(len(cs) - 1):
-                    cpairs += [(cs[i], cs[i+1])]
-            pos0 = [p[0] for p in cpairs] + [p[0] for p in vpairs]
-            pos1 = [p[1] for p in cpairs] + [p[1] for p in vpairs]
-            self.total_c_pairs = len(cpairs)
-            self.total_v_pairs = len(vpairs)
-            self.seg_counters[0][(language, source)] = Counter(pos0)
-            self.seg_counters[1][(language, source)] = Counter(pos1)
-        return self.seg_counters[position][(language, source)][segment]
+        if (language, source) not in self.seg_counters:
+            segments = [char for word in self.data[language][source] for char in word]
+            self.seg_counters[(language, source)] = Counter(segments)
+        return self.seg_counters[(language, source)][segment]
 
-
-    def get_seg_freq(self, language, source, segment, position, non_adj=False):
+    def get_seg_freq(self, language, source, segment):
         self.check_data(language, source)
-        count = self.get_seg_count(language, source, segment, position, non_adj)
-        if non_adj:
-            if segment in VOWELS:
-                total = self.total_v_pairs_non_adj
-            else:
-                total = self.total_c_pairs_non_adj
-        else:
-            if segment in VOWELS:
-                total = self.total_v_pairs
-            else:
-                total = self.total_c_pairs
-        if count == 0:
-            return 0
-        return count/total
+        seg_count = self.get_seg_count(language, source, segment)
+        total = self.seg_counters[(language, source)].total()
+        return np.log(seg_count/total)
 
     def get_vowel_pairs(self, language, source):
         self.check_data(language, source)

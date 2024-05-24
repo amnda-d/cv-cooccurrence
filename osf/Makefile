@@ -11,7 +11,7 @@ lint:
 	pylint tests --disable=import-error
 
 test:
-	nose2 -c nose2.cfg -v --layer-reporter
+	nose2 -c tests/nose2.cfg -v --layer-reporter
 	@make clean
 
 testall: lint test

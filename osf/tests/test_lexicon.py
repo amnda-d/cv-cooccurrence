@@ -64,14 +64,13 @@ with such.A("Lexicon") as it:
 
     @it.should("count the number of occurrences of a segment")
     def test_count_seg():
-        it.assertEqual(it.lex.get_seg_count('finnish', 'northeuralex', 'm', 0, non_adj=True), 1)
-        it.assertEqual(it.lex.get_seg_count('finnish', 'northeuralex', 'm', 1, non_adj=True), 1)
-        it.assertEqual(it.lex.get_seg_count('evenki', 'northeuralex', 'a', 0, non_adj=True), 3)
+        it.assertEqual(it.lex.get_seg_count('finnish', 'northeuralex', 'm'), 2)
+        it.assertEqual(it.lex.get_seg_count('evenki', 'northeuralex', 'a'), 3)
 
     @it.should("calculate the frequency of a segment")
     def test_seg_freq():
-        it.assertEqual(it.lex.get_seg_freq('finnish', 'northeuralex', 'i', 0, non_adj=True), 1/4)
-        it.assertEqual(it.lex.get_seg_freq('evenki', 'northeuralex', 'm', 1, non_adj=True), 1/3)
+        it.assertEqual(it.lex.get_seg_freq('finnish', 'northeuralex', 'i'), np.log(1/15))
+        it.assertEqual(it.lex.get_seg_freq('evenki', 'northeuralex', 'm'), np.log(2/12))
 
     @it.should("get all possible vowel pairs")
     def test_get_v_pairs():
